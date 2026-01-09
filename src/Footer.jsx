@@ -56,13 +56,13 @@ const Footer = () => {
                   <div className="absolute left-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 z-50">
                     <a
                       href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
-                      className="block px-4 py-2 text-sm text-orange-400 hover:bg-gray-700 hover:text-white"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
                       Android
                     </a>
                     <a
                       href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
-                      className="block px-4 py-2 text-sm text-orange-400 hover:bg-gray-700 hover:text-white"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
                       iOS
                     </a>

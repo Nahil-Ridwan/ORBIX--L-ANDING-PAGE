@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
     const [isDownloadOpen, setIsDownloadOpen] = useState(false);
 
     async function redirectToWhatsapp() {
@@ -28,10 +28,11 @@ const Navbar = () => {
             </div>
            
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-3">
               
-              <a href="#about" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline mr-10">About Us</a>
-              <a href="#feature" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline">Features</a>
+              <a href="#about" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline mr-7">About Us</a>
+              <a href="#feature" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline mr-7">Features</a>
+              <a href="#footer" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline mr-6">Contact Us</a>
 
               {/* Download with dropdown */}
               <div
@@ -40,33 +41,33 @@ const Navbar = () => {
                 onMouseLeave={() => setIsDownloadOpen(false)}
               >
                 <button
-                  type="button"
-                  onClick={() => setIsDownloadOpen((s) => !s)}
-                  className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline flex items-center gap-1"
-                  aria-expanded={isDownloadOpen}
-                >
-                  Download
-                </button>
+                onClick={() => setIsDownloadOpen((s) => !s)}
+                className="bg-[#e56d11] text-white px-4 py-2 rounded-xl font-medium hover:bg-[#c05d11] transition shadow-lg shadow-emerald-600/20 focus:outline-none focus:ring-0 focus:border-none"
+                type="button"
+              >
+                Download
+                <span className="ml-2 text-white">{isDownloadOpen ? '▴' : '▾'}</span>
+              </button>
 
                 {isDownloadOpen && (
                   <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 z-50">
                     <a
                       href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
-                      className="block px-4 py-2 text-sm text-orange-400 hover:bg-gray-700 hover:text-white"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
                       Android
                     </a>
                     <a
                       href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
-                      className="block px-4 py-2 text-sm text-orange-400 hover:bg-gray-700 hover:text-white"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
-                      iOS
+                      ios
                     </a>
                   </div>
                 )}
               </div>
 
-              <a href="#footer" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline">Contact Us</a>
+              
                 <a
                 onClick={(e)=>{e.preventDefault(); redirectToWhatsapp();}}
                 role="button"
@@ -82,49 +83,50 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button onClick={() => { setIsMenuOpen(!isMenuOpen); if (!isMenuOpen) setIsDownloadOpen(false); }} className="text-slate-600">
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {/* Mobile Actions */}
+            <div className="md:hidden flex items-center gap-3">
+              {/* Mobile download toggle */}
+              <button
+                onClick={() => setIsDownloadOpen((s) => !s)}
+                className="bg-[#e56d11] text-white px-4 py-2 rounded-xl font-medium hover:bg-[#c05d11] transition shadow-lg shadow-emerald-600/20 focus:outline-none focus:ring-0 focus:border-none"
+                type="button"
+              >
+                Download
+                <span className="ml-2 text-white">{isDownloadOpen ? '▴' : '▾'}</span>
               </button>
+             {isDownloadOpen && (
+                  <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 mt-35 mr-25 z-50">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400"
+                    >
+                      Android
+                    </a>
+                    <a
+                      href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
+                      className="block px-4 py-2 text-sm font-bold text-orange-400"
+                    >
+                      iOS
+                    </a>
+                  </div>
+                )}
+
+              {/* WhatsApp Button (Mobile) */}
+              <button
+                onClick={(e)=>{e.preventDefault(); redirectToWhatsapp();}}
+                className="bg-green-600 text-white px-4 py-2 rounded-xl font-medium hover:bg-green-700 transition shadow-lg shadow-emerald-600/20"
+                type="button"
+              >
+                Whatsapp
+              </button>
+
+              
+            </div>
+
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-gray-700/90 border-t p-4 space-y-4">
-            <a href="#about" className="block text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline">About Us</a>
-            <a href="#feature" className="block text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline">Features</a>
-            <a href="#footer" className="text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline">Contact Us</a>
-            {/* Mobile download toggle */}
-            <div>
-              <button
-                onClick={() => setIsDownloadOpen((s) => !s)}
-                className="w-full text-left block text-orange-400 visited:text-orange-400 hover:text-orange-500 font-medium no-underline flex items-center justify-between px-2 py-2"
-                type="button"
-              >
-                Download
-                <span className="ml-2">{isDownloadOpen ? '▴' : '▾'}</span>
-              </button>
-              {isDownloadOpen && (
-                <div className="mt-1 pl-4 flex flex-col gap-1">
-                  <a href="https://play.google.com/store/apps/details?id=com.tbtrack.gps" className="block text-orange-300 hover:text-white">Android</a>
-                  <a href="https://apps.apple.com/" className="block text-orange-300 hover:text-white">iOS</a>
-                </div>
-              )}
-            </div>
-            <a
-              onClick={(e)=>{e.preventDefault(); redirectToWhatsapp();}}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); redirectToWhatsapp(); } }}
-              className="bg-green-600 text-white px-5 py-2 rounded-xl font-medium hover:bg-green-700 transition shadow-lg shadow-emerald-600/20 cursor-pointer"
-              type='button'
-            >
-              Whatsapp
-            </a>
-
-          </div>
-        )}
       </nav>
     </div>
   )
