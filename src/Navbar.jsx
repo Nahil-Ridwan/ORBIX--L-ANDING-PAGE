@@ -92,7 +92,7 @@ const Navbar = () => {
                 <Download size={20}/>
               </button>
              {isDownloadOpen && (
-                  <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 mt-35 mr-14 z-50">
+                  <div className="absolute right-0 mt-2 w-44 bg-gray-800 rounded-md shadow-lg py-1 z-50">
                     <a
                       href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
                       className="block px-4 py-2 text-sm font-bold text-orange-400"
