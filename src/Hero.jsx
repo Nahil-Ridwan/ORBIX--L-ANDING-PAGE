@@ -35,7 +35,11 @@ const Hero = () => {
   };
 
   return (
-    <div id="home" className="relative min-h-screen font-sans text-slate-800 flex items-center justify-start overflow-hidden">
+    <div
+  id="home"
+  className="relative min-h-[100svh] font-sans text-slate-800 flex items-center justify-start overflow-hidden"
+>
+
       {/* Background images with fade transition */}
       {images.map((img, idx) => (
         <div
@@ -53,7 +57,8 @@ const Hero = () => {
       {/* Caption only — no headings */}
       <section className="relative w-full z-10">
         <div className="w-full px-6 sm:px-8 lg:px-12 relative text-left font-bold">
-          <div className="relative h-28 md:h-32 lg:h-36 mt-6 w-96">
+          <div className="relative h-28 md:h-32 lg:h-36 mt-6 w-full max-w-3xl">
+
             {text.map((t, idx) => (
               <p
                 key={idx}

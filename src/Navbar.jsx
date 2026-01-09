@@ -20,12 +20,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               
-                <img
-                  src="images/logo-no-bg-orange.png"
-                  className="h-16 w-16 max-w-full"
-                  alt="logo"
-                />
-
+                <img src="images\logo-no-bg-orange.png" alt="ko" className='size-16'/>
               
               <span className="text-2xl font-bold text-orange-400 tracking-tight">Orbitracker</span>
             </div>
@@ -56,13 +51,13 @@ const Navbar = () => {
                   <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 z-50">
                     <a
                       href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
-                      className="block px-4 py-2 text-base font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
                       Android
                     </a>
                     <a
                       href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
-                      className="block px-4 py-2 text-base font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400 hover:bg-gray-700 hover:text-white"
                     >
                       ios
                     </a>
@@ -97,16 +92,16 @@ const Navbar = () => {
                 <Download size={20}/>
               </button>
              {isDownloadOpen && (
-                  <div className="absolute right-0 mt-2 w-44 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                  <div className="absolute right-0  w-44 bg-gray-800 rounded-md shadow-lg py-1 z-50 mt-35 mr-14">
                     <a
                       href="https://play.google.com/store/apps/details?id=com.tbtrack.gps"
-                      className="block px-4 py-2 text-base font-bold text-orange-400"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400"
                     >
                       Android
                     </a>
                     <a
                       href="https://apps.apple.com/us/app/tb-track-vehicle-tracking/id1249657981" /* replace with real App Store link */
-                      className="block px-4 py-2 text-base font-bold text-orange-400"
+                      className="block px-4 py-2 text-sm font-bold text-orange-400"
                     >
                       ios
                     </a>
