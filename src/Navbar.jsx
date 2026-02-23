@@ -2,6 +2,7 @@ import  { useState } from 'react';
 import {
   Download
 } from 'lucide-react';
+import { scrollToTop } from './utils';
 
 const Navbar = () => {
     
@@ -13,6 +14,7 @@ const Navbar = () => {
         const url = `https://wa.me/${phonenumber}?text=${message}`;
         window.location.href = url;
       }
+      
   return (
     <div className="overflow-x-hidden">
         <nav className="fixed w-full z-50 bg-gray-800/60 backdrop-blur-md border-b border-orange-300">
@@ -20,9 +22,9 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               
-                <img src="images\logo-no-bg-orange.png" alt="ko" className='size-16'/>
+                <img src="images\logo-no-bg-orange.png" alt="ko" className='size-16 cursor-pointer' onClick={scrollToTop}/>
               
-              <span className="text-2xl font-bold text-orange-400 tracking-tight">Orbitracker</span>
+              <span className="text-2xl font-bold text-orange-400 tracking-tight cursor-pointer" onClick={scrollToTop}>Orbitracker</span>
             </div>
            
             {/* Desktop Menu */}

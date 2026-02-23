@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { scrollToTop } from './utils';
 
 const Hero = () => {
   const [bgIndex, setBgIndex] = useState(0);
@@ -39,9 +40,7 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  
 
   return (
     <div
